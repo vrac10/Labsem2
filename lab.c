@@ -174,56 +174,53 @@ int main(){
 
 /*
 5) Write C functions to print Union and Intersection of array elements.
+
+#inxlude<stdio.h>
+
+void UnionIntersection(int a1[],int a2[],int n1,int n2){
+    int a3[n1+n2];  // Union
+    int a4[n1];  //Intersection
+    int j = 0;
+    int z = 0;
+    for(int i = 0; i < n1; i++){
+        a3[j] = a1[i];
+        j+=1;
+    }
+    int dup = 0;
+    for(int i = 0; i < n2; i++){
+        for(int k = 0; k <= j; k++){
+            if(a3[k] == a2[i]){
+                dup = 1;
+                a4[z] = a3[k];
+                z+=1;
+            }
+        }
+        if(dup == 0){
+            a3[j] = a2[i];
+            j+=1;
+        }
+        else{
+            dup = 0;
+        }
+    }
+    printf("Union = ");
+    for(int i = 0; i < j; i++){
+        printf("%d ",a3[i]);
+    }
+    printf("\n");
+    printf("Intersection = ");
+    for(int i = 0; i < z; i++){
+        printf("%d ",a4[i]);
+    }
+}
+
+int main(){
+    int arr1[6] = {1,10,3,4,5,6};
+    int arr2[6] = {23,87,10,5,6};
+    UnionIntersection(arr1,arr2,6,5);
+}
+
 */
-
-// #include<stdio.h>
-
-// void readArray(int a[], int n){
-//       for(int i = 0; i < n; i++){
-//         printf("Enter the %d element: ",i);
-//         scanf("%d",&a[i]);
-//     }
-
-// }
-
-// void printArray(int a[], int n){
-
-//     for(int j = 0 ; j<n; j++){
-//         printf("%d\t",a[j]);
-//     }
-
-//     printf("\n");
-
-// }
-
-// int main(){
-//     int n;
-//     printf("Enter the number of elements: ");
-//     scanf("%d",&n);
-//     int a[n];
-
-//     readArray(a,n);
-//     printArray(a,n);
-
-//     int x;
-//     printf("Enter the number of elements: ");
-//     scanf("%d",&x);
-//     int b[x];
-
-//     readArray(b,x);
-//     printArray(b,x);
-
-//     int union_arr[n];
-//     int m = 0;
-//     for(int i = 0; i < n; i++){
-//         for(int j = 0; j < x; j++){
-//             if(a[i] == a[j]){
-                
-//             }
-//         }
-//     }
-
-// }
 
 
 /*
