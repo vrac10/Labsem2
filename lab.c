@@ -81,11 +81,15 @@ int check_prime(int n){
 }
 
 int next(int n){
+    if (check_prime(n) == 1){
+    n++;
+    }
     while(check_prime(n) != 1){
         n++;
     }
     return n;
 }
+
 int main(){
     int x;
     printf("Enter the number : ");
