@@ -464,6 +464,9 @@ typedef struct node{
 
 void addEnd(node_t*s, int n){
     node_t *p = (node_t *) malloc(sizeof(node_t));
+    while(s->link != NULL){
+        s = s->link;
+    }
     p->info = n;
     p->link = NULL;
     s->link = p;
